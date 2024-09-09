@@ -13,6 +13,7 @@ stages:
       hash: md5
       md5: a6818a3358d0c52db5d18e9b29fc4528
       size: 2624
+      isexec: true
     params:
       params.yaml:
         prepare.random_state: 2023
@@ -48,8 +49,9 @@ stages:
       size: 13058
     - path: src/models/train.py
       hash: md5
-      md5: 547ebabb2819d96302c9ae7b976db7cb
-      size: 2372
+      md5: 633522bc505f99da4308991ed228c069
+      size: 2389
+      isexec: true
     params:
       params.yaml:
         train.algorithm: RandomForestRegressor
@@ -57,12 +59,12 @@ stages:
     outs:
     - path: metrics/emissions.csv
       hash: md5
-      md5: bbe1ece7840332fdec16dd0f8875a990
-      size: 835
+      md5: 885b20c35ca67379a6018dc2e924558a
+      size: 882
     - path: models/iowa_model.pkl
       hash: md5
-      md5: 7b574e610b74cec0c45ff248df286bbf
-      size: 11841033
+      md5: 4d4ed1bb0eb2b442773e01c3e12a7e3a
+      size: 11840699
   evaluate:
     cmd: python -m src.models.evaluate
     deps:
@@ -76,12 +78,13 @@ stages:
       size: 3267
     - path: models/iowa_model.pkl
       hash: md5
-      md5: 7b574e610b74cec0c45ff248df286bbf
-      size: 11841033
+      md5: 4d4ed1bb0eb2b442773e01c3e12a7e3a
+      size: 11840699
     - path: src/models/evaluate.py
       hash: md5
       md5: 88d02f596efa25ca14cb3bb5f981149b
       size: 2454
+      isexec: true
     outs:
     - path: metrics/scores.json
       hash: md5
