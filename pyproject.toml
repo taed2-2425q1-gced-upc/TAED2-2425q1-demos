@@ -46,6 +46,7 @@ pre-commit = "^3.8.0"
 omit = ["src/prepare.py", "src/evaluate.py", "src/train.py", "src/train_api_demo_models.py"]
 
 [tool.pytest.ini_options]
+pythonpath = "."
 testpaths = "tests"
 addopts = "--junitxml=out/tests-report.xml --cov=src --cov-report=html:out/coverage"
 
