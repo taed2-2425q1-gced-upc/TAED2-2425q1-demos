@@ -1057,13 +1057,13 @@ files = [
 
 [[package]]
 name = "codecarbon"
-version = "2.7.0"
+version = "2.7.1"
 description = ""
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "codecarbon-2.7.0-py3-none-any.whl", hash = "sha256:cddc82af0f80096acef997e8d6fb6a7135b5290aca578ff9c4e4a20a4edb642c"},
-    {file = "codecarbon-2.7.0.tar.gz", hash = "sha256:5bccaeda96cc3314744591f121f5d4cffcba49efaabc5fafaa446e9dc21fec67"},
+    {file = "codecarbon-2.7.1-py3-none-any.whl", hash = "sha256:d056e3a422b956f7902bb1b7c910487134d6079cdd42f0f6b99abaa9b7302d09"},
+    {file = "codecarbon-2.7.1.tar.gz", hash = "sha256:b1e15cb6746a1b3760719f3534c458f59f22ee0f644a6d0070011093b1c84ee1"},
 ]
 
 [package.dependencies]
@@ -1937,13 +1937,13 @@ tests = ["asttokens (>=2.1.0)", "coverage", "coverage-enable-subprocess", "ipyth
 
 [[package]]
 name = "fastapi"
-version = "0.114.0"
+version = "0.115.0"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "fastapi-0.114.0-py3-none-any.whl", hash = "sha256:fee75aa1b1d3d73f79851c432497e4394e413e1dece6234f68d3ce250d12760a"},
-    {file = "fastapi-0.114.0.tar.gz", hash = "sha256:9908f2a5cc733004de6ca5e1412698f35085cefcbfd41d539245b9edf87b73c1"},
+    {file = "fastapi-0.115.0-py3-none-any.whl", hash = "sha256:17ea427674467486e997206a5ab25760f6b09e069f099b96f5b55a32fb6f1631"},
+    {file = "fastapi-0.115.0.tar.gz", hash = "sha256:f93b4ca3529a8ebc6fc3fcf710e5efa8de3df9b41570958abf1d97d843138004"},
 ]
 
 [package.dependencies]
@@ -2426,13 +2426,13 @@ graphql-core = ">=3.2,<3.3"
 
 [[package]]
 name = "great-expectations"
-version = "1.0.2"
+version = "1.0.5"
 description = "Always know what to expect from your data."
 optional = false
 python-versions = "<3.12,>=3.8"
 files = [
-    {file = "great_expectations-1.0.2-py3-none-any.whl", hash = "sha256:fc775549d047879ea83dd43b23ebe0d8c5938085b9ce0e5bdeca321f936ff763"},
-    {file = "great_expectations-1.0.2.tar.gz", hash = "sha256:8dd0343fbcb01025f671168b2300fe581212bc3ccd70e3cf33de0d71c93ff573"},
+    {file = "great_expectations-1.0.5-py3-none-any.whl", hash = "sha256:06f632908eab5d36d438719e2bba20a812553799b702963f09b98e40487676a6"},
+    {file = "great_expectations-1.0.5.tar.gz", hash = "sha256:7da8b2eba53c8ae342862246f018b18bd3dc62a2c591af80052d7a2c88d1d270"},
 ]
 
 [package.dependencies]
@@ -2470,7 +2470,7 @@ azure-secrets = ["azure-identity (>=1.10.0)", "azure-keyvault-secrets (>=4.0.0)"
 bigquery = ["gcsfs (>=0.5.1)", "google-cloud-bigquery (>=3.3.6)", "google-cloud-bigquery-storage (>=2.20.0)", "google-cloud-secret-manager (>=1.0.0)", "google-cloud-storage (>=1.28.0)", "google-cloud-storage (>=2.10.0)", "sqlalchemy (<2.0.0)", "sqlalchemy-bigquery (>=1.3.0)"]
 clickhouse = ["clickhouse-sqlalchemy (>=0.2.2)", "clickhouse-sqlalchemy (>=0.3.0)", "sqlalchemy (<2.0.0)"]
 cloud = ["orjson (>=3.9.7)"]
-databricks = ["databricks-sql-connector (>=2.0.0)", "databricks-sql-connector[sqlalchemy] (>=3.0.0)", "sqlalchemy (>=1.4.0)"]
+databricks = ["databricks-sql-connector[sqlalchemy] (>=3.0.0)", "sqlalchemy (>=1.4.0)"]
 dremio = ["pyodbc (>=4.0.30)", "sqlalchemy (>=1.4.0)", "sqlalchemy-dremio (==1.2.1)"]
 excel = ["openpyxl (>=3.0.7)", "xlrd (>=1.1.0,<2.0.0)"]
 gcp = ["gcsfs (>=0.5.1)", "google-cloud-bigquery (>=3.3.6)", "google-cloud-bigquery-storage (>=2.20.0)", "google-cloud-secret-manager (>=1.0.0)", "google-cloud-storage (>=1.28.0)", "google-cloud-storage (>=2.10.0)", "sqlalchemy (<2.0.0)", "sqlalchemy-bigquery (>=1.3.0)"]
@@ -2481,8 +2481,9 @@ pagerduty = ["pypd (==1.1.0)"]
 postgresql = ["psycopg2-binary (>=2.7.6)", "sqlalchemy (>=1.4.0)"]
 redshift = ["psycopg2-binary (>=2.7.6)", "sqlalchemy (<2.0.0)", "sqlalchemy-redshift (>=0.8.8)"]
 s3 = ["boto3 (>=1.17.106)"]
-snowflake = ["pandas (<2.2.0)", "snowflake-connector-python (>2.9.0)", "snowflake-connector-python (>=2.5.0)", "snowflake-sqlalchemy (>=1.2.3,!=1.5.2)", "sqlalchemy (<2.0.0)"]
+snowflake = ["pandas (<2.2.0)", "snowflake-connector-python (>2.9.0)", "snowflake-connector-python (>=2.5.0)", "snowflake-sqlalchemy (>=1.2.3,!=1.5.2)", "sqlalchemy (>=1.4.0)"]
 spark = ["pyspark (>=2.3.2)"]
+spark-connect = ["googleapis-common-protos (>=1.56.4)", "grpcio (>=1.48.1)", "grpcio-status (>=1.48.1)"]
 teradata = ["sqlalchemy (<2.0.0)", "teradatasqlalchemy (==17.0.0.5)"]
 test = ["adr-tools-python (==1.0.3)", "boto3 (>=1.17.106)", "coverage[toml] (>=7.5.1)", "docstring-parser (==0.15)", "feather-format (>=0.4.1)", "flaky (>=3.7.0)", "flask (>=1.0.0)", "freezegun (>=0.3.15)", "invoke (>=2.0.0)", "ipykernel (<=6.17.1)", "moto[s3,sns] (>=4.2.13,<5.0)", "mypy (==1.11.2)", "nbconvert (>=5)", "nbformat (>=5.0)", "pact-python (>=2.0.1)", "pre-commit (>=2.21.0)", "pyarrow", "pyfakefs (>=4.5.1)", "pytest (>=8.2.1)", "pytest-benchmark (>=3.4.1)", "pytest-cov (>=5.0.0)", "pytest-icdiff (>=0.9.0)", "pytest-mock (>=3.14.0)", "pytest-order (>=1.2.1)", "pytest-random-order (>=1.1.1)", "pytest-timeout (>=2.3.1)", "pytest-xdist (>=3.6.1)", "requirements-parser (>=0.9.0)", "responses (>=0.23.1)", "ruff (==0.5.3)", "setuptools (>=70.0.0)", "snapshottest (==0.6.0)", "sqlalchemy (>=1.4.0)", "tomli (>=2.0.1)"]
 trino = ["sqlalchemy (>=1.4.0)", "trino (>=0.310.0,!=0.316.0)"]
@@ -4099,13 +4100,13 @@ files = [
 
 [[package]]
 name = "mlflow"
-version = "2.16.0"
+version = "2.16.2"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlflow-2.16.0-py3-none-any.whl", hash = "sha256:9f27ef6ae7a82d7ecd67b6b4a4d50637a5e8160639115570fbc689758f9c0b54"},
-    {file = "mlflow-2.16.0.tar.gz", hash = "sha256:82ea1a2e800f404f1586783b7636091c0a5754cf9ff45afeadf3a5e467f5168f"},
+    {file = "mlflow-2.16.2-py3-none-any.whl", hash = "sha256:7ed8f1d27e719a19592d9582e4415aa76abb3de53c524d6b9c66cbf5e00a1023"},
+    {file = "mlflow-2.16.2.tar.gz", hash = "sha256:322512bcdd13d87039cd60ebcd4370ce16115fb5360905010978575202e57876"},
 ]
 
 [package.dependencies]
@@ -4120,7 +4121,7 @@ Jinja2 = [
 ]
 markdown = ">=3.3,<4"
 matplotlib = "<4"
-mlflow-skinny = "2.16.0"
+mlflow-skinny = "2.16.2"
 numpy = "<3"
 pandas = "<3"
 pyarrow = ">=4.0.0,<18"
@@ -4142,13 +4143,13 @@ xethub = ["mlflow-xethub"]
 
 [[package]]
 name = "mlflow-skinny"
-version = "2.16.0"
+version = "2.16.2"
 description = "MLflow is an open source platform for the complete machine learning lifecycle"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlflow_skinny-2.16.0-py3-none-any.whl", hash = "sha256:c55541f50efd0f6637377b10e8a654847a3fcd815b8680a95f02e0ca6bd7700c"},
-    {file = "mlflow_skinny-2.16.0.tar.gz", hash = "sha256:9b823173063743783b4e7b6c52bdadcc7d9dab48eb883ac454c0d56609df6b2d"},
+    {file = "mlflow_skinny-2.16.2-py3-none-any.whl", hash = "sha256:c6faf8bddcba3d2bbde45c954c89575b93c4bef1d5e7e026d98fd9966015038c"},
+    {file = "mlflow_skinny-2.16.2.tar.gz", hash = "sha256:c4064506ee8b590dea5dc3a139a890d50996d8ab511fbd34b0266bf69ebaa9d8"},
 ]
 
 [package.dependencies]
@@ -7720,13 +7721,13 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "uvicorn"
-version = "0.30.6"
+version = "0.31.0"
 description = "The lightning-fast ASGI server."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "uvicorn-0.30.6-py3-none-any.whl", hash = "sha256:65fd46fe3fda5bdc1b03b94eb634923ff18cd35b2f084813ea79d1f103f711b5"},
-    {file = "uvicorn-0.30.6.tar.gz", hash = "sha256:4b15decdda1e72be08209e860a1e10e92439ad5b97cf44cc945fcbee66fc5788"},
+    {file = "uvicorn-0.31.0-py3-none-any.whl", hash = "sha256:cac7be4dd4d891c363cd942160a7b02e69150dcbc7a36be04d5f4af4b17c8ced"},
+    {file = "uvicorn-0.31.0.tar.gz", hash = "sha256:13bc21373d103859f68fe739608e2eb054a816dea79189bc3ca08ea89a275906"},
 ]
 
 [package.dependencies]
@@ -8356,4 +8357,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.12"
-content-hash = "27141390296013794cbc19f7a33f91d2a442da8ebb92ad0a496c36b47a04ab36"
+content-hash = "f4527404e0f8a821e1a25793cfdb29eaeef32519f4b05bd2c909d40d0cb83958"
