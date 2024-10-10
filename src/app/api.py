@@ -4,7 +4,7 @@ import logging
 import pickle
 from contextlib import asynccontextmanager
 from http import HTTPStatus
-from typing import Dict
+from typing import Dict, Union
 
 import tensorflow as tf
 import tensorflow_hub as hub
@@ -87,7 +87,7 @@ async def _index():
 
 
 @app.get("/models/tabular", tags=["Prediction"])
-def _get_tabular_models_list(model_type: str | None = None):
+def _get_tabular_models_list(model_type: Union[str, None] = None):
     """Return the list of available models"""
 
     if model_type is not None:
