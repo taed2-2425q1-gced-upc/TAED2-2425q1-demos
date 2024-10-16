@@ -1,0 +1,127 @@
+{
+  "expectations": [
+    {
+      "id": "08ec72d8-fb87-40de-af5e-6350f66b384b",
+      "kwargs": {
+        "column_list": [
+          "MSSubClass",
+          "LotFrontage",
+          "LotArea",
+          "OverallQual",
+          "OverallCond",
+          "YearBuilt",
+          "YearRemodAdd",
+          "MasVnrArea",
+          "BsmtFinSF1",
+          "BsmtFinSF2",
+          "BsmtUnfSF",
+          "TotalBsmtSF",
+          "1stFlrSF",
+          "2ndFlrSF",
+          "LowQualFinSF",
+          "GrLivArea",
+          "BsmtFullBath",
+          "BsmtHalfBath",
+          "FullBath",
+          "HalfBath",
+          "BedroomAbvGr",
+          "KitchenAbvGr",
+          "TotRmsAbvGrd",
+          "Fireplaces",
+          "GarageYrBlt",
+          "GarageCars",
+          "GarageArea",
+          "WoodDeckSF",
+          "OpenPorchSF",
+          "EnclosedPorch",
+          "3SsnPorch",
+          "ScreenPorch",
+          "PoolArea",
+          "MiscVal",
+          "MoSold",
+          "YrSold",
+          "Id",
+          "SalePrice"
+        ]
+      },
+      "meta": {},
+      "type": "expect_table_columns_to_match_ordered_list"
+    },
+    {
+      "id": "b152873a-2e33-46b0-b46b-9d6be7229e1a",
+      "kwargs": {
+        "column": "Id"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_be_unique"
+    },
+    {
+      "id": "57f9d897-5ba1-4efe-912c-e83aa00687b5",
+      "kwargs": {
+        "column": "Id"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "dc5f64c8-7a7b-4ace-8326-14d35afbba7e",
+      "kwargs": {
+        "column": "Id",
+        "type_": "int64"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_be_of_type"
+    },
+    {
+      "id": "9c1e9acc-b680-4312-b8ee-e335efe6a33a",
+      "kwargs": {
+        "column": "MSSubClass",
+        "max_value": 200.0,
+        "min_value": 0.0
+      },
+      "meta": {},
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "4c1967bc-2333-468d-bfee-57aff7d7d8cc",
+      "kwargs": {
+        "column": "MSSubClass",
+        "type_": "float64"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_be_of_type"
+    },
+    {
+      "id": "a90dc1e3-ca2b-4b05-9908-268c1a47f202",
+      "kwargs": {
+        "column": "SalePrice"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "8c01ea6d-e04e-4d8c-88a1-a48f5f3b27d3",
+      "kwargs": {
+        "column": "SalePrice",
+        "min_value": 0.0
+      },
+      "meta": {},
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "193d950c-62ea-41d7-acf1-4bd6d9b5d8fc",
+      "kwargs": {
+        "column": "SalePrice",
+        "type_": "int64"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_be_of_type"
+    }
+  ],
+  "id": "8a9daebe-fa66-4457-bd2a-65cc6ceb0522",
+  "meta": {
+    "great_expectations_version": "1.0.2"
+  },
+  "name": "iowa_training_data_validation",
+  "notes": null
+}

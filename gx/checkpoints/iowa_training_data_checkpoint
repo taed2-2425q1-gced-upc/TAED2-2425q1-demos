@@ -1,0 +1,20 @@
+{
+  "actions": [
+    {
+      "name": "update_data_docs",
+      "site_names": [],
+      "type": "update_data_docs"
+    }
+  ],
+  "id": "f33e223b-cb3d-41b0-a942-1f2c2df52e0c",
+  "name": "iowa_training_data_checkpoint",
+  "result_format": {
+    "result_format": "SUMMARY"
+  },
+  "validation_definitions": [
+    {
+      "id": "105b7f88-a7ac-4309-a1bc-a05c19b2b86b",
+      "name": "iowa_training_data_validator"
+    }
+  ]
+}

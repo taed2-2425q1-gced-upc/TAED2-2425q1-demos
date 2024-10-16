@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "f3a578c5-fa61-4137-a72e-d2180ad8f14b",
+      "name": "iowa_processed_data"
+    },
+    "batch_definition": {
+      "id": "c7226069-2c97-490b-b32e-df665dc568af",
+      "name": "iowa_training_data"
+    },
+    "datasource": {
+      "id": "3e9bea37-e555-4036-89d9-b4fa882b2e76",
+      "name": "iowa_dataset"
+    }
+  },
+  "id": "105b7f88-a7ac-4309-a1bc-a05c19b2b86b",
+  "name": "iowa_training_data_validator",
+  "suite": {
+    "id": "8a9daebe-fa66-4457-bd2a-65cc6ceb0522",
+    "name": "iowa_training_data_validation"
+  }
+}
