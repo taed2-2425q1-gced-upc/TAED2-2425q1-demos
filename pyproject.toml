@@ -23,7 +23,7 @@ pyyaml = "^6.0.2"
 requests = "^2.32.3"
 deepchecks = {version = "^0.18", extras = ["vision"]}
 torchvision = "^0.19"
-pydantic = "^2.9"
+pydantic = "^2.10"
 opencv-python = "^4.10.0.84"
 tensorflow = ">2.0,<2.18.0"
 tensorflow-hub = ">0.5"
