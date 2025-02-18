@@ -1,21 +1,20 @@
 """Main script: it includes our API initialization and endpoints."""
 
-import logging
-import pickle
 from contextlib import asynccontextmanager
 from http import HTTPStatus
-from typing import Dict, Union
+import logging
+import pickle
 
-import tensorflow as tf
-import tensorflow_hub as hub
 from codecarbon import track_emissions
 from fastapi import FastAPI, HTTPException, UploadFile
+import tensorflow as tf
+import tensorflow_hub as hub
 
 from src.app.schemas import IrisPredictionPayload, IrisType
 from src.config import METRICS_DIR, MODELS_DIR
 
 # Initialize the dictionary to group models by "tabular" or "image" and then by model type
-model_wrappers_dict: Dict[str, Dict[str, dict]] = {"tabular": {}, "image": {}}
+model_wrappers_dict: dict[str, dict[str, dict]] = {"tabular": {}, "image": {}}
 
 
 def file_to_image(file: bytes):
@@ -40,9 +39,7 @@ async def lifespan(app: FastAPI):
     """Loads all pickled models found in `MODELS_DIR` and adds them to `models_list`"""
 
     model_paths = [
-        filename
-        for filename in MODELS_DIR.iterdir()
-        if filename.suffix == ".pkl" and filename.stem.startswith("iris")
+        filename for filename in MODELS_DIR.iterdir() if filename.suffix == ".pkl" and filename.stem.startswith("iris")
     ]
 
     for path in model_paths:
@@ -87,15 +84,13 @@ async def _index():
 
 
 @app.get("/models/tabular", tags=["Prediction"])
-def _get_tabular_models_list(model_type: Union[str, None] = None):
+def _get_tabular_models_list(model_type: str | None = None):
     """Return the list of available models"""
 
     if model_type is not None:
         model = model_wrappers_dict["tabular"].get(model_type, None)
         if model is None:
-            raise HTTPException(
-                status_code=HTTPStatus.BAD_REQUEST, detail="Type not found"
-            )
+            raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail="Type not found")
         available_models = [
             {
                 "type": model["type"],
@@ -164,9 +159,7 @@ def _predict_tabular(model_type: str, payload: IrisPredictionPayload):
             },
         }
     else:
-        raise HTTPException(
-            status_code=HTTPStatus.BAD_REQUEST, detail="Model not found"
-        )
+        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail="Model not found")
     return response
 
 
@@ -194,9 +187,7 @@ async def _predict_image(file: UploadFile):
 
     cv_model = model_wrappers_dict["image"]["mobilenet_v3"]["model"]
     predictions = cv_model(tf.expand_dims(image, axis=0))
-    predicted_label = tf.keras.applications.mobilenet_v3.decode_predictions(
-        predictions[:, 1:], top=1
-    )[0][0][1]
+    predicted_label = tf.keras.applications.mobilenet_v3.decode_predictions(predictions[:, 1:], top=1)[0][0][1]
 
     logging.info("Predicted class %s", predicted_label)
 

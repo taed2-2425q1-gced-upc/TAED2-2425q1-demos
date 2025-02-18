@@ -1,5 +1,4 @@
 import great_expectations as gx
-
 from great_expectations.exceptions import DataContextError
 
 # We import the existing DataContext
@@ -10,7 +9,7 @@ data_docs_config = {
     "site_index_builder": {"class_name": "DefaultSiteIndexBuilder"},
     "store_backend": {
         "class_name": "TupleFilesystemStoreBackend",
-        "base_directory": "data_docs", # relative to the root folder of the Data Context
+        "base_directory": "data_docs",  # relative to the root folder of the Data Context
     },
 }
 context.update_data_docs_site("local_site", data_docs_config)

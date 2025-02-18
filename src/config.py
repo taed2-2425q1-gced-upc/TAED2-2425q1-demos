@@ -1,11 +1,18 @@
 import logging
+import os
 from pathlib import Path
 
 from dotenv import load_dotenv
 
 load_dotenv()
 
-PROJ_ROOT = Path(__file__).resolve().parents[1]
+root = os.getenv("ROOT")
+if root is None:
+    raise ValueError(
+        "ROOT environment variable is not set in .env file. Use dot-env-template file to create .env file."
+    )
+
+PROJ_ROOT = Path(root)
 
 DATA_DIR = PROJ_ROOT / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
