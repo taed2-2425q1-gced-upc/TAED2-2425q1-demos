@@ -1,10 +1,11 @@
 from http import HTTPStatus
 
 import cv2
-import pytest
 from fastapi.testclient import TestClient
+import pytest
 
 from src.app.api import app
+from src.app.schemas import IrisType
 from src.config import TEST_DATA_DIR
 
 
@@ -36,19 +37,16 @@ def payload():
 def test_root(client):
     response = client.get("/")
     json = response.json()
-    assert response.status_code == 200
-    assert (
-        json["data"]["message"]
-        == "Welcome to IRIS classifier! Please, read the `/docs`!"
-    )
+    assert response.status_code == HTTPStatus.OK
+    assert json["data"]["message"] == "Welcome to IRIS classifier! Please, read the `/docs`!"
     assert json["message"] == "OK"
-    assert json["status-code"] == 200
+    assert json["status-code"] == HTTPStatus.OK
 
 
 def test_get_all_models(client):
     response = client.get("/models/tabular")
     json = response.json()
-    assert response.status_code == 200
+    assert response.status_code == HTTPStatus.OK
     assert json["data"] == [
         {
             "type": "LogisticRegression",
@@ -68,13 +66,13 @@ def test_get_all_models(client):
         },
     ]
     assert json["message"] == "OK"
-    assert json["status-code"] == 200
+    assert json["status-code"] == HTTPStatus.OK
 
 
 def test_get_one_model(client):
     response = client.get("/models/tabular?model_type=SVC")
     json = response.json()
-    assert response.status_code == 200
+    assert response.status_code == HTTPStatus.OK
     assert json["data"] == [
         {
             "type": "SVC",
@@ -83,22 +81,22 @@ def test_get_one_model(client):
         }
     ]
     assert json["message"] == "OK"
-    assert json["status-code"] == 200
+    assert json["status-code"] == HTTPStatus.OK
 
 
 def test_get_one_model_not_found(client):
     response = client.get("/models/tabular?model_type=RandomForestClassifier")
-    assert response.status_code == 400
+    assert response.status_code == HTTPStatus.BAD_REQUEST
     assert response.json()["detail"] == "Type not found"
 
 
 def test_model_prediction(client, payload):
     response = client.post("/predict/tabular/LogisticRegression", json=payload)
     json = response.json()
-    assert response.status_code == 200
-    assert json["data"]["prediction"] == 2
+    assert response.status_code == HTTPStatus.OK
+    assert json["data"]["prediction"] == IrisType.VIRGINICA.value
     assert json["message"] == "OK"
-    assert json["status-code"] == 200
+    assert json["status-code"] == HTTPStatus.OK
 
 
 def test_model_prediction_not_found(client, payload):
@@ -125,7 +123,7 @@ def test_classify_image(client, sample, expected):
     )
 
     json = response.json()
-    assert response.status_code == 200
+    assert response.status_code == HTTPStatus.OK
     assert json["message"] == "OK"
-    assert json["status-code"] == 200
+    assert json["status-code"] == HTTPStatus.OK
     assert json["data"]["predicted_class"] == expected
